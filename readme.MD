@@ -6,14 +6,14 @@ Nos complace dejarte estos archivos para que podás encarar con los mismos las p
 
 Para que podás trabajar con estos archivos lo primero será:
 
-1. Clonar este repo: `git clone https://github.com/javi-dh/baseAppHtml`
-2. Ingresar a la carpeta: `cd baseAppHtml` 
-3. Una vez dentro, ejecutar: `npm install`
-4. Ejecutar `npm start`. Ahora ya podés acceder a [localhost:3000](http://localhost:3000)
+1. Descargá estos archivos en un ZIP.
+2. Ingresar a la carpeta: `cd baseAppHtml`.
+3. Una vez dentro, ejecutar: `npm install`.
+4. Terminada la instalación. Ejecutar `npm start`. Ahora ya podés acceder a [localhost:3000](http://localhost:3000)
 
 ## Forma de Uso
 
-A continuación te relatamos cómo están construidos estos archivos para que podás usarlo con facilidad:
+A continuación te relatamos cómo están construidos estos archivos para que podás usarlos con facilidad:
 
 1. Abrí la carpeta *baseAppHtml* en VS Code.
 2. Abrí el archivo `app.js`.
@@ -22,7 +22,7 @@ Dentro del archivo `app.js`, vas a encontrar que en la línea 26 hay algo cómo 
 
 Si abrís el archivo [/routes/main.js](/routes/main.js) te darás cuenta que allí hay un ejemplo de ruta tipo *get* la cual se verá así: `router.get('/', mainController.root);`. Esto significa que el *route system* está usando el método `root` del controlador `mainController`. Este último archivo se encuentra ubicado en: [controllers/mainController.js](controllers/mainController.js).
 
-Al abrir el archivo [controllers/mainController.js](controllers/mainController.js) te darás cuenta que la constante `controller` es la que se está exportando y justamente esta es un objeto literal de momento con un solo método, el método `root`. Adicionalmente dentro de este archivo encontrarás las siguiente función:
+Al abrir el archivo [controllers/mainController.js](controllers/mainController.js) te darás cuenta que la constante `controller` es la que se está exportando y justamente ella es un objeto literal con un solo método, el método `root`. Adicionalmente dentro de este archivo encontrarás las siguiente función:
 
 ```js
 function readHTML (fileName) {
