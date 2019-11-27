@@ -26,7 +26,8 @@ Al abrir el archivo [controllers/mainController.js](controllers/mainController.j
 
 ```js
 function readHTML (fileName) {
-	let htmlFile = fs.readFileSync(path.join(__dirname, `/../views/${fileName}.html`), 'utf-8');
+	let filePath = path.join(__dirname, `/../views/${fileName}.html`);
+	let htmlFile = fs.readFileSync(filePath, 'utf-8');
 	return htmlFile;
 }
 ```
@@ -40,7 +41,7 @@ const controller = {
 		let html = readHTML('index'); 
 		// 2. Enviando el contenido del archivo en la respuesta del servidor
 		res.send(html);
-	}
+	},
 };
 ```
 
@@ -58,10 +59,13 @@ router.get('/contacto', mainController.contact);
 2. Crear el método `contact` en el archivo `/controllers/mainController.js`. Ejemplo:
 ```js
 const controller = {
-	// ...
+	root: (req, res) => {
+		let html = readHTML('index'); 
+		res.send(html);
+	},
 	contacto: (req, res) => {
 		let html = readHTML('contacto');
 		res.send(html);
-	}
+	},
 }
 ```
