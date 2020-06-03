@@ -1,11 +1,13 @@
 // ************ Require's ************
-const express = require('express');
-const router = express.Router();
 
-// ************ Controller Require ************
-const mainController = require('../controllers/mainController');
-
-/* GET - home page. */
-router.get('/', mainController.root);
-
-module.exports = router;
+porid: (req, res) => {
+	let listadoDeBandas = bandas.lista;
+	
+	for (let i = 0; i < listadoDeBandas.length; i++) {
+		if (listadoDeBandas[i].id === req.params.id) {
+			return res.send(listadoDeBandas[i]);
+		}	
+	}
+	
+	return res.send('No se encontró banda con ese ID.');
+},
